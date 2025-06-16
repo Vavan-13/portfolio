@@ -1,0 +1,1 @@
+<?php // Langue FR stub ?>

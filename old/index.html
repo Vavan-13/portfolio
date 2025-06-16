@@ -1,0 +1,43 @@
+<?php
+// includes/menu.php (mis à jour)
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+
+$role = $_SESSION['role'] ?? 'visiteur';
+$prenom = $_SESSION['prenom'] ?? null;
+?>
+
+<aside class="w-64 bg-white border-r min-h-screen p-4 flex flex-col justify-between">
+  <div>
+    <div class="text-green-700 font-bold text-xl mb-6">📁 Portfolio MMI</div>
+
+    <nav class="space-y-2 text-gray-700 text-sm">
+      <a href="index.php" class="block px-3 py-2 rounded hover:bg-green-100">👤 À propos</a>
+      <a href="mes_realisations.php" class="block px-3 py-2 rounded hover:bg-green-100">📂 Mes Réalisations</a>
+
+      <?php if ($role === 'evaluateur' || $role === 'concepteur'): ?>
+        <a href="logout.php" class="block px-3 py-2 rounded hover:bg-green-100">🔒 Déconnexion</a>
+      <?php endif; ?>
+
+      <?php if ($role === 'concepteur'): ?>
+        <a href="notifications.php" class="block px-3 py-2 rounded hover:bg-green-100">🔔 Notifications</a>
+        <a href="admin/ajouter_trace.php" class="block px-3 py-2 rounded hover:bg-green-100">➕ Ajouter une trace</a>
+        <a href="admin/utilisateurs.php" class="block px-3 py-2 rounded hover:bg-green-100">🧑‍⚖️ Gérer utilisateurs</a>
+        <a href="logs.php" class="block px-3 py-2 rounded hover:bg-green-100">📜 Logs</a>
+      <?php endif; ?>
+
+      <?php if ($role === 'visiteur'): ?>
+        <a href="login.php" class="block px-3 py-2 rounded hover:bg-green-100">🔑 Connexion / Inscription</a>
+      <?php endif; ?>
+    </nav>
+  </div>
+
+  <div class="mt-4 text-sm text-gray-500">
+    <?php if ($prenom): ?>
+      Connecté en tant que <strong class="text-green-700"><?= htmlspecialchars($prenom) ?></strong>
+    <?php else: ?>
+      <span class="italic">Non connecté</span>
+    <?php endif; ?>
+  </div>
+</aside>

@@ -1,0 +1,18 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+:root{
+    /* Max Witdh */
+    --max_width: 1440px;
+
+    /*Couleurs*/
+    --black:#000;
+    --red:#f60303;
+    --white:#fff;
+    --grey:#c1c1c1;
+    --lightgrey:#f1f1f1;
+    --white:#0B1F3A;
+
+}
