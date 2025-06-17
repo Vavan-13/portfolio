@@ -234,7 +234,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <option value="7">Projet tutoré</option>
         <option value="8">Communication</option>
         <option value="9">Réseaux sociaux</option>
-        <option value="10">Branding</option>
       </select>
 
       <input type="number" name="annee_but" placeholder="Année de BUT (facultatif)" min="1" max="3">

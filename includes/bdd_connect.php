@@ -1,5 +1,5 @@
 <?php
-$host = 'localhost'; // ou '127.0.0.1'
+$host = '127.0.0.1'; // ou '127.0.0.1'
 $dbname = 'puev4583_portfolio_evan_2025';
 $user = 'puev4583_user';
 $password = 'PUTev1968';
@@ -12,7 +12,7 @@ try {
         $password
     );
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    // echo "✅ Connexion à la base réussie.";
+    // echo "Connexion à la base réussie.";
     if (php_sapi_name() === 'cli-server') {
   echo "✅ Connexion à la base réussie.";
 }

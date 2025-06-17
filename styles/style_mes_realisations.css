@@ -1,0 +1,218 @@
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  src: url('https://fonts.gstatic.com/s/poppins/v20/pxiEyp8kv8JHgFVrJJLmr19VF9eO.woff2') format('woff2');
+  font-display: swap;
+}
+body {
+      background: #f9fbff;
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      color: #111;
+    }
+    main {
+      padding-left: 85px;
+      transition: padding-left 0.4s ease;
+      min-height: 100dvh;
+    }
+    .sidebar:hover ~ main {
+      padding-left: 260px;
+    }
+    .container {
+      max-width: 1100px;
+      margin: auto;
+      padding: 40px 20px;
+    }
+    h1 {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 30px;
+      color: #4f52ba;
+    }
+    .filter-form {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 16px;
+  background: #fff;
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  margin-bottom: 40px;
+  max-height: 1000px;
+  transition: all 0.4s ease;
+}
+    .filter-form select,
+    .filter-form button {
+      padding: 12px 16px;
+      font-size: 1rem;
+      border-radius: 10px;
+      border: 1px solid #ccc;
+      width: 100%;
+      box-sizing: border-box;
+    }
+    .filter-form button {
+      background-color: #4f52ba;
+      color: white;
+      font-weight: bold;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    .filter-form button:hover {
+      background-color: #3a3db5;
+    }
+    .cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+@media (hover: hover) and (pointer: fine) {
+  .cards-grid:has(.trace-card:hover) > .trace-card:not(:hover) {
+    opacity: 0.4;
+    filter: grayscale(30%) brightness(0.95);
+    transition: all 0.3s ease;
+  }
+}
+
+    .trace-card {
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+  background-color: #fff;
+  color: #111;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+}
+    .trace-card:hover {
+      transform: translateY(-5px);
+    }
+    .card-image {
+      position: relative;
+      background-size: cover;
+      background-position: center;
+      height: 200px;
+    }
+    .badge {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      background-color: #4f52ba;
+      color: white;
+      padding: 4px 12px;
+      font-size: 0.75rem;
+      border-radius: 12px;
+      font-weight: bold;
+    }
+    
+    .card-body {
+      padding: 16px;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .card-body h3 {
+      font-size: 1.2rem;
+      font-weight: bold;
+      margin: 0 0 8px;
+    }
+    .card-body .dot {
+      color: #4f52ba;
+    }
+    .card-body p {
+      font-size: 0.95rem;
+      color: #555;
+      margin-bottom: 12px;
+    }
+    .card-footer {
+      font-size: 0.85rem;
+      color: #777;
+    }
+    @media screen and (max-width: 500px) {
+      .card-image {
+        height: 160px;
+      }
+      .overlay-title {
+        font-size: 1.2rem;
+      }
+      .card-body h3 {
+        font-size: 1rem;
+      }
+    }
+  
+    .filter-form.collapsed {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  padding: 0 !important;
+  margin: 0 !important;
+  pointer-events: none;
+  transition: all 0.4s ease;
+}
+
+  .filter-form {
+    transition: all 0.3s ease-in-out;
+  }
+.toggle-filter-btn {
+  padding: 10px 16px;
+  background-color: #4f52ba;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  transition: background 0.3s ease;
+}
+.toggle-filter-btn:hover {
+  background-color: #3a3db5;
+}
+.filter-header {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 10px;
+}
+.arrow-icon {
+  display: inline-block;
+  transition: transform 0.3s ease;
+  margin-right: 6px;
+}
+@media screen and (max-width: 500px) {
+  .cards-grid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .trace-card {
+    width: 100%;
+    max-width: 320px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .filter-form.collapsed {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    padding: 0 !important;
+    margin: 0 !important;
+    pointer-events: none;
+    transition: all 0.4s ease;
+  }
+
+  .filter-form {
+    transition: none !important;
+  }
+}
+
+
+@media screen and (max-width: 768px) {
+  .filter-form {
+    transition: none !important;
+  }
+}
